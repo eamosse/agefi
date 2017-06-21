@@ -25,6 +25,7 @@ Please adapt the query according to your programming language.
 "token_type":"Bearer",
 "scope":null}
 ```
+
 access_token : contains the access token to use to access the web service, it should be securely saved locally
 expires_in : validity of the access key in seconds
 
@@ -62,6 +63,7 @@ Fields :
   "contact" : email
 ]```
 
+
 Required Fields 
 
 ```
@@ -77,10 +79,12 @@ Required Fields
   "contact"
 ]
 ```
+
 Extra Actions : Filter jobs 
 Parameters : filter - possible values (jobActivite, jobLocalisation,
 jobTypePoste, jobExperience,jobSteId)
 Example: 
+
 ```
 $curl "http://agefi-emploi.fr/jobs?
 access_token=758b5034c743e2351c96451decb4d93db656417e&jobActivite=24
