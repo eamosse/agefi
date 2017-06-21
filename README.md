@@ -26,18 +26,18 @@ Please adapt the query according to your programming language.
 "scope":null}
 ```
 
-access_token : contains the access token to use to access the web service, it should be securely saved locally
-expires_in : validity of the access key in seconds
+* access_token : contains the access token to use to access the web service, it should be securely saved locally
+* expires_in : validity of the access key in seconds
 
 ### For all the operations in the API 
-Required Parameters : access_token
+* Required Parameters : access_token
 
 
 ### JOB resssources
-URI: http://agefi-emploi.fr/jobs
-Parameters : access_token
-Supported Operations : GET, POST, PUT, DELETE 
-Fields : 
+* URI: http://agefi-emploi.fr/jobs
+* Parameters : access_token
+* Supported Operations : GET, POST, PUT, DELETE 
+* Fields : 
 ```
 [
   "jobNom" : String,
@@ -61,10 +61,10 @@ Fields :
   "jobDatePublication" : date,
   "jobStatut" : integer,
   "contact" : email
-]```
+]
+```
 
-
-Required Fields 
+* Required Fields 
 
 ```
 [
@@ -80,10 +80,10 @@ Required Fields
 ]
 ```
 
-Extra Actions : Filter jobs 
-Parameters : filter - possible values (jobActivite, jobLocalisation,
-jobTypePoste, jobExperience,jobSteId)
-Example: 
+* Extra Actions : Filter jobs 
+* Parameters : filter - possible values (jobActivite, jobLocalisation,
+* jobTypePoste, jobExperience,jobSteId)
+* Example: 
 
 ```
 $curl "http://agefi-emploi.fr/jobs?
