@@ -1,87 +1,118 @@
 # AGEFI WEB SERVICE 
+The document describes the AGEFI API to manage ressources on the AGEFI platform. It includes the description of the ressources as well as the allowed operations. 
 
-One Paragraph of project description goes here
+## Getting started
 
-## Getting Started
+All actions in the API are secured with the OAUTH2 protocol. Developpers must be familiar with the protocol in order to use the API. The API is provided as a RESTFull Web service, it is also required that developers understand how REST Web services work. 
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+### Web service type : REST
+### Exchange format : JSON 
 
-### Prerequisites
+### Authentification
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+All operations in the API, require an access token. The access token can be otained with the following request usinge the secretkey. If you don't have a secret key, please contact us.  
 
 ```
-Give the example
+curl -u username:secretKey "http://agefi-emploi.fr/auth" -d
+'grant_type=client_credentials'
+```
+Please adapt the query according to your programming language. 
+
+#### Response
+```
+{"access_token":"xxxxxxxxxxxxxxxxxx",
+"expires_in":3600,
+"token_type":"Bearer",
+"scope":null}
+```
+access_token : contains the access token to use to access the web service, it should be securely saved locally
+expires_in : validity of the access key in seconds
+
+### For all the operations in the API 
+Required Parameters : access_token
+
+
+### JOB resssources
+URI: http://agefi-emploi.fr/jobs
+Parameters : access_token
+Supported Operations : GET, POST, PUT, DELETE 
+Fields : 
+```
+[
+  "jobNom" : String,
+  "jobActivite" : integer,
+  "jobLocalisation" : integer,
+  "jobTypePoste" : integer,
+  "jobExperience":integer,
+  "jobSalaire":integer,
+  "jobDuree" : integer,
+  "jobDateStart" : date,
+  "jobMission" : String,
+  "jobProfil" : String,
+  "jobSteId" : integer //enterprise ID,
+  "jobCandatureLien" : String,
+  "jobCandatureTexte" : String,
+  "jobCandidatureEmail" : email 
+  "jobTypeCandidature" : integer (
+  "jobMetierId" : integer,
+  "enAvant" : String,
+  "dateModification" : date,
+  "jobDatePublication" : date,
+  "jobStatut" : integer,
+  "contact" : email
+]```
+
+Required Fields 
+
+```
+[
+  "jobNom",
+  "jobActivite",
+  "jobLocalisation",
+  "jobTypePoste",
+  "jobExperience",
+  "jobMission",
+  "jobProfil",
+  "jobSteId",
+  "contact"
+]
+```
+Extra Actions : Filter jobs 
+Parameters : filter - possible values (jobActivite, jobLocalisation,
+jobTypePoste, jobExperience,jobSteId)
+Example: 
+```
+$curl "http://agefi-emploi.fr/jobs?
+access_token=758b5034c743e2351c96451decb4d93db656417e&jobActivite=24
 ```
 
-And repeat
+## jobTypePoste Ressources 
+URI : http://agefi-emploi.fr/jobActivites
+Parameter : access_token
+VERBS : GET
+RESPONSE: JSON 
 
-```
-until finished
-```
+## jobLocalisations Ressources 
+URI : http://agefi-emploi.fr/jobLocalisations
+Parameter : access_token
+VERBS : GET
+RESPONSE: JSON
 
-End with an example of getting some data out of the system or using it for a little demo
+## jobTypePostes Ressources 
+URI : http://agefi-emploi.fr/jobTypePostes
+Parameter : access_token
+VERBS : GET
+RESPONSE: JSON
 
-## Running the tests
+## entreprises Ressources 
+URI : http://agefi-emploi.fr/entreprises
+Parameter : access_token
+VERBS : GET
+RESPONSE: JSON
 
-Explain how to run the automated tests for this system
+## jobExperiences Ressources 
+URI : http://agefi-emploi.fr/jobExperiences
+Parameter : access_token
+VERBS : GET
+RESPONSE: JSON
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
