@@ -11,7 +11,11 @@ All actions in the API are secured with the OAUTH2 protocol. Developpers must be
 ### Authentification
 
 All operations in the API, require an access token. The access token can be otained with the following request usinge the secretkey. If you don't have a secret key, please contact us.  
+* URL : http://agefi-emploi.fr/auth
+* Parameters : grant_type = client_credentials
+* Header -u username:secretKey
 
+#### Exemple
 ```
 curl -u username:secretKey "http://agefi-emploi.fr/auth" -d
 'grant_type=client_credentials'
