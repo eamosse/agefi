@@ -91,32 +91,32 @@ access_token=758b5034c743e2351c96451decb4d93db656417e&jobActivite=24
 ```
 
 ## jobTypePoste Ressources 
-*URI : http://agefi-emploi.fr/jobActivites
-*Parameter : access_token
-*VERBS : GET
-*RESPONSE: JSON 
+* URI : http://agefi-emploi.fr/jobActivites
+* Parameter : access_token
+* VERBS : GET
+* RESPONSE: JSON 
 
 ## jobLocalisations Ressources 
-*URI : http://agefi-emploi.fr/jobLocalisations
-*Parameter : access_token
-*VERBS : GET
-*RESPONSE: JSON
+* URI : http://agefi-emploi.fr/jobLocalisations
+* Parameter : access_token
+* VERBS : GET
+* RESPONSE: JSON
 
 ## jobTypePostes Ressources 
-*URI : http://agefi-emploi.fr/jobTypePostes
-*Parameter : access_token
-*VERBS : GET
-*RESPONSE: JSON
+* URI : http://agefi-emploi.fr/jobTypePostes
+* Parameter : access_token
+* VERBS : GET
+* RESPONSE: JSON
 
 ## entreprises Ressources 
-*URI : http://agefi-emploi.fr/entreprises
-*Parameter : access_token
-*VERBS : GET
-*RESPONSE: JSON
+* URI : http://agefi-emploi.fr/entreprises
+* Parameter : access_token
+* VERBS : GET
+* RESPONSE: JSON
 
 ## jobExperiences Ressources 
-*URI : http://agefi-emploi.fr/jobExperiences
-*Parameter : access_token
-*VERBS : GET
-*RESPONSE: JSON
+* URI : http://agefi-emploi.fr/jobExperiences
+* Parameter : access_token
+* VERBS : GET
+* RESPONSE: JSON
 
